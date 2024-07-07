@@ -1,0 +1,38 @@
+.main-header {
+  background-color: tomato;
+  transition: width 2s, height 4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.main-header h1 {
+  color: #ffffff;
+  font-size: 40px;
+  cursor: pointer;
+}
+.main-header p {
+  color: cornsilk;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .main-header {
+    background-color: blue;
+  }
+}
+@media (max-width: 1200px) {
+  .main-header h1 {
+    background-color: blue;
+    font-size: 60px;
+  }
+}
+@media (max-width: 1200px) {
+  .main-header p {
+    border-radius: 20px;
+    color: red;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

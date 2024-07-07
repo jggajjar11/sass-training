@@ -1,0 +1,24 @@
+$bg-color:tomato;
+.main-header{
+    background-color: $bg-color;
+    transition: width 2s, height 4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    
+    h1{
+        color: #ffffff;
+        font-size: 40px;
+        cursor: pointer;
+        
+    }
+    p{
+        color: cornsilk;
+        font-size: 20px;
+        cursor: pointer;
+        
+    }
+}
+@import 'responsive';

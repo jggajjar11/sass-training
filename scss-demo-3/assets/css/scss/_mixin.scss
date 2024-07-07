@@ -1,0 +1,113 @@
+@use "breakpoints" as b;
+@use "function" as f;
+@use "sass:math";
+
+
+//Mixin for font-face
+@mixin font-face($style-name, $file, $family) {
+    $filepath: '../fonts/' + $file;
+   
+    @font-face {
+      font-family: '#{$style-name}';
+      src: url($filepath + '.woff') format('woff');
+    }
+ 
+}
+
+//Mixin for font-size
+@mixin font-size($size) {
+    font-size: f.calculateRem($size);
+}
+
+//Mixin for columns width
+@mixin cols{
+    @for $i from 1 through 12{
+        $width: calc($i / 12);
+        
+        .col-#{$i} {
+            width: math.percentage($width);     
+        }
+    }
+
+}
+
+//Mixin for ff
+@mixin ff-li{
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+// Mixin for padding & margin
+$max: 50;
+$offset: 5;
+$unit: 'px'; // Feel free to change the unit.
+@mixin list-loop($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} { 
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+//Mixin for Padding left-right-15
+@mixin p-l-r-btn{    
+   padding: 18px 32px;
+}
+
+//Mixin for buttons
+@mixin txt-btn{
+    background: #000000;
+    border: 1px solid #CFCFCF;
+    color:white;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 18px;
+    &:hover{
+        background: #FFFFFF;
+        color: #000000;
+    }
+}
+
+//Responsive
+
+// Mixin For All Section
+@mixin xl {
+    
+    @media (max-width: #{b.$screen-xl-min}) {
+        @content;
+    }
+
+}
+@mixin lg {
+    
+    @media (max-width: #{b.$screen-lg-min}) {
+        @content;
+    }
+
+}
+@mixin md {
+    
+    @media (max-width: #{b.$screen-md-min}) {
+        @content;
+    }
+
+}
+@mixin sm {
+    
+    @media (max-width: #{b.$screen-sm-min}) {
+        @content;
+    }
+
+}
+@mixin xsm {
+    
+    @media (max-width: #{b.$screen-xsm-min}) {
+        @content;
+    }
+
+ }
